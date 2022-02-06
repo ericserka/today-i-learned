@@ -1,18 +1,18 @@
-# Mensagens semânticas de commit
+# Nomes Semânticos para Branch
 
-Padrão de commits para um repositória mais organizado.
+Padrão de nomes de branch para um repositória mais organizado.
 
-Formato: `<type>: <subject>`
+Formato: `<type>/#<issueNumber>-<alias>`
 
 ## Example
 
 ```
-feat: adicao de navbar
-^--^  ^------------^
-|     |
-|     +-> Resumo do que foi feito.
+feat/#1-init
+^------^   ^---^
+|          |
+|          +---> palavra chave da issue
 |
-+-------> Type: chore, docs, feat, fix, refactor, style ou test.
++-------> Type: feat, chore, docs, fix, refactor, style ou test.
 ```
 
 Type pode ser:
@@ -33,6 +33,4 @@ Type pode ser:
 
 Referências:
 
-- https://www.conventionalcommits.org/
-- https://seesparkbox.com/foundry/semantic_commit_messages
-- http://karma-runner.github.io/1.0/dev/git-commit-msg.html
+- https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716
