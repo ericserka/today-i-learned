@@ -7,6 +7,7 @@ Comandos ultra básicos de docker para colocar banco de dados em container.
 3. docker run --name <CONTAINER_NAME> --net <NETWORK_NAME> --restart unless-stopped -d -p <PORT_NUMBER>:<PORT_NUMBER> <IMAGE_NAME> cria um container com a imagem baixada
 4. docker logs <CONTAINER_NAME> caso dê erro na criação do container
 5. docker exec -it <CONTAINER_NAME> /bin/bash executa a imagem do container do docker
+6. docker exec -it <CONTAINER_NAME> redis-cli executa a CLI do redis
 
 Exemplos:
 1. PostgreSQL:
@@ -21,3 +22,6 @@ Exemplos:
 4. PgAdmin4
   - docker pull dpage/pgadmin4
   - docker run --name pgadmin --network=some-postgres-network -p 5050:80 -e "PGADMIN_DEFAULT_EMAIL=emailforlogin" -e "PGADMIN_DEFAULT_PASSWORD=secretpasswordforlogin" -d dpage/pgadmin4
+5. Redis
+  - docker pull redis
+  - docker run --name some-redis -d redis
