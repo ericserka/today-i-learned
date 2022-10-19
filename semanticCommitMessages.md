@@ -1,38 +1,32 @@
-# Mensagens semânticas de commit
+# Semantic commit messages
 
-Padrão de commits para um repositória mais organizado.
+Commit pattern for a more organized repository.
 
-Formato: `<type>: <subject>`
+Format: `<type>: <subject>`
 
 ## Example
 
 ```
-feat: adicao de navbar
+feat: navbar
 ^--^  ^------------^
 |     |
-|     +-> Resumo do que foi feito.
+|     +-> Summary of what was done.
 |
-+-------> Type: chore, docs, feat, fix, refactor, style ou test.
++-------> Type: chore, docs, feat, fix, refactor, style or test.
 ```
 
-Type pode ser:
+Type can be:
 
-- `feat`: (novo recurso para o usuário, não um novo recurso para o código)
+- `feat`: new feature for the user, not a new feature for the code;
 
-- `fix`: (correção de bug para o usuário, não correção de bug de código)
+- `fix`: bug fix for user, not code bug fix;
 
-- `docs`: (mudanças na documentação)
+- `docs`: documentation changes;
 
-- `style`: (formatação de código, adicionando ponto e vírgula, etc; sem mudanças em produção)
+- `style`: code formatting, adding semicolon, etc; no changes in production;
 
-- `refactor`: (refatoração do código de produção; por exemplo renomear uma variável ou função)
+- `refactor`: production code refactoring; for example rename a variable or function;
 
-- `test`: (adicionando novos testes, refatorando testes já existentes; sem mudanças em produção)
+- `test`: adding new tests, refactoring existing tests; no changes in production;
 
-- `chore`: (desativando suporte para Node 6 etc)
-
-Referências:
-
-- https://www.conventionalcommits.org/
-- https://seesparkbox.com/foundry/semantic_commit_messages
-- http://karma-runner.github.io/1.0/dev/git-commit-msg.html
+- `chore`: updating grunt tasks etc (disabling support for Node 6 for example); no production code change.

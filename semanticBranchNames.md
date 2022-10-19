@@ -1,8 +1,8 @@
-# Nomes Semânticos para Branch
+# Semantic Names for Branch
 
-Padrão de nomes de branch para um repositória mais organizado.
+Branch name pattern for a more organized repository.
 
-Formato: `<type>/#<issueNumber>-<alias>`
+Format: `<type>/#<issueNumber>-<alias>`
 
 ## Example
 
@@ -10,27 +10,23 @@ Formato: `<type>/#<issueNumber>-<alias>`
 feat/#1-init
 ^------^   ^---^
 |          |
-|          +---> palavra chave da issue
+|          +---> issue keyword
 |
-+-------> Type: feat, chore, docs, fix, refactor, style ou test.
++-------> Type: feat, chore, docs, fix, refactor, style or test.
 ```
 
-Type pode ser:
+Type can be:
 
-- `feat`: (novo recurso para o usuário, não um novo recurso para o código)
+- `feat`: new feature for the user, not a new feature for the code;
 
-- `fix`: (correção de bug para o usuário, não correção de bug de código)
+- `fix`: bug fix for user, not code bug fix;
 
-- `docs`: (mudanças na documentação)
+- `docs`: documentation changes;
 
-- `style`: (formatação de código, adicionando ponto e vírgula, etc; sem mudanças em produção)
+- `style`: code formatting, adding semicolon, etc; no changes in production;
 
-- `refactor`: (refatoração do código de produção; por exemplo renomear uma variável ou função)
+- `refactor`: production code refactoring; for example rename a variable or function;
 
-- `test`: (adicionando novos testes, refatorando testes já existentes; sem mudanças em produção)
+- `test`: adding new tests, refactoring existing tests; no changes in production;
 
-- `chore`: (desativando suporte para Node 6 etc)
-
-Referências:
-
-- https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716
+- `chore`: updating grunt tasks etc (disabling support for Node 6 for example); no production code change.

@@ -1,56 +1,52 @@
-# Trabalhando em branches diferentes Git/Github Git Flow 
+# Working on different branches Git/Github GitFlow
 
-1. Primeiro de tudo, dar o pull na branch develop:
+1. First of all, `git pull` in the develop branch:
 
 ```bash
-git checkout develop # Ir pra branch develop
+git checkout develop # Go to develop branch
 git pull
 ```
 
-2. Criar branch nova (feature nova) baseada na develop para você alterar o que precisa:
+2. Create new branch based on develop:
 
 ```bash
-git branch    # Verificar se está na develop
-git checkout -b nome-da-feature # Cria nova branch e já é movido para ela
+git branch    # Check if it's on develop
+git checkout -b feat/xyz # Create a new branch called 'feat/xyz' and checkout
 
-# Se você der 'git branch -av' ele vai listar todas as suas branchs (as remotas e as
-# locais) e você pode verificar se a mensagem do último commit da branch develop é a
-# mesma da branch que você criou agora
+# Just out of curiosity, 'git branch -av' lists the remote and local branches
 ```
 
-3. Na branch nova, muda o que precisa
+3. In the new branch, change what you need.
 
-4. Dar commit nas mudanças e dar o push
+4. Commit changes and push:
 
 ```bash
 git add .
-git commit -m "Sua mensagem"
-git push --set-upstream origin nome-da-feature
+git commit -m "Your message"
+git push --set-upstream origin feat/xyz
 ```
 
-5. Dar merge dela com a develop e depois dar o pull
+5. Merge the new branch into develop and `git pull` to fetch and download content from the remote repository and update the local repository to match that content:
 
 ```bash
 git checkout develop
-git merge nome-da-feature
+git merge feat/xyz
 git pull
 ```
 
-6. Confere se o que voce fez na branch que criou foi pra develop
-
-7. Se sim, apaga a branch que criou:
+6. Delete the branch you created:
 
 ```bash
-git branch -d nome-da-feature # Remove a branch localmente
-git push origin --delete nome-da-feature # Remove a branch remotamente
+git branch -d feat/xyz # Remove the branch locally
+git push origin --delete feat/xyz # Remove the branch remotely
 ```
 
-8. Se não, volta pra dar o merge direito
-
-9. Dar push final na develop
+7. Give final push in develop:
 
 ```bash
 git add .
-git commit -m "Sua mensagem"
+git commit -m "Your message"
 git push
 ```
+
+Note: When several people work on the same repository, the `git merge` is usually not done directly as demonstrated here. The common thing is to open a pull request, request a review from another contributor and only then do the merge (if the contributor accepts your pull request).

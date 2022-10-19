@@ -1,4 +1,4 @@
-# Relações de 1 para N e de N para N entre tabelas de um banco de dados SQL
+# 1-to-N and N-to-N relationships between tables in a SQL database
 
-- 1 para N: criar chave estrangeira na tabela N, que referencia a tabela 1.
-- N para N: criar uma tabela auxiliar tabela1-tabela2 que deve ter duas chaves estrangeiras, uma que referencia a tabela 1 e outra que referencia a tabela 2.
+- 1-to-N: the foreign key must be created in table N, which references table 1.
+- N-to-N: an auxiliary table must be created (table1-table2) that must have two foreign keys: one that references table 1 and one that references table 2.
