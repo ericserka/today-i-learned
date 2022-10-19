@@ -24,6 +24,7 @@ defmodule MyApp.Repo.Migrations.CreatePostgresTrigger do
                 'table_changes',
                 json_build_object(
                   'table', TG_TABLE_NAME,
+                  'schema', TG_TABLE_SCHEMA,
                   'type', TG_OP,
                   'id', current_row.id,
                   'new_row_data', row_to_json(NEW),
