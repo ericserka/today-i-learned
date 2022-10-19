@@ -10,7 +10,7 @@ Basic docker commands.
 6. `docker ps`: list containers;
 7. Generally, commands in containers can be executed by either <CONTAINER_NAME> or <CONTAINER_ID>.
 
-Exemplos:
+Examples:
 
 1. PostgreSQL:
 
