@@ -4,6 +4,6 @@
 2. `sudo apt update`
 3. `sudo apt install fish`
 4. `chsh -s /usr/bin/fish`
-6. `nano ~/.config/fish/config.fish`
+5. `nano ~/.config/fish/config.fish`
    - `set fish_greeting`
-7. Log out and log back in
+6. Log out and log back in
