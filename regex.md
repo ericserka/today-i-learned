@@ -1,0 +1,37 @@
+# Regex
+
+- `\bstring\b` matches the entire word `string`
+- Regex is already case sensitive by default, so if you want to ignore case you have to put the `/i` flag at the end of the regex
+- Characters with special meanings in regex:
+  - `.` matches any character except line breaks. Example: `a.b` matches `aab`, `acb`, etc., but not `ab`.
+  - `^` matches the beginning of the line
+  - `$` matches the end of the line
+  - `*` matches zero or more occurrences of the previous character
+  - `+` matches one or more occurrences of the previous character
+  - `?` matches zero or one occurrence of the previous character. That is, it can be used to make the previous character optional. For example, `colou?r` can match `color` and `colour`
+  - `()` are used to group parts of a regular expression, allowing operators like `*`, `+`, `?`, `{}`, `^` and `$` are applied to the entire group
+    - Can be used for grouping: `(abc)+` can match `bcaabc`, `abcabc`, etc.
+    - Can be used for alternatives: `a(b|c)` can match `ab` or `ac`
+    - Can be used for backreference by capturing groups: `(\w+)\s+\1` matches a word (`\w+`) followed by one or more spaces and the same word again. For example, `hello hello` or `world world`. The `\1` is a reference to the first captured group
+  - `[]` are used to specify a set of characters. For example, `[abc]`, `[a-z]`, `[A-Z]`, `[0-9]`, `[A-Za-z0-9]`. The latter matches any uppercase, lowercase or numeric digit
+    - `[^]` is used to negate a set of characters. For example, `[^abc]` matches any character other than `a`, `b` or `c`
+    - Some special characters have meanings outside the brackets, but within them they are treated as literal. With the exception of `^` (negation), `-` (intervals), `[` (start of set) and `]` (end of set), which need to be escaped with `\` to be treated as literals: `[\[\]]` matches `[` or `]`
+  - `|` is used for alternatives. For example, `a|b` matches `a` or `b`
+  - `\` is used to escape special characters. For example, `\\` matches `\`
+  - `-`, when used within square brackets, is used to specify a range of characters.
+  - `{}` are used as quantifiers. That is, they specify the number of times an element or group must occur.
+    - `{n}` matches exactly `n` occurrences of the previous element. For example, `\d{3}` corresponds to three numeric digits
+    - `{n,}` matches at least `n` occurrences of the previous element. For example, `\d{3,}` matches three or more numeric digits
+    - `{n,m}` matches at least `n` and at most `m` occurrences of the previous element. For example, `\d{3,5}` matches three, four or five numeric digits
+    - You can make a quantifier non-greedy by adding a `?` after the `{}`. That causes the expression to match the smallest possible number of characters, rather than the largest. Example: `a{2,4}?` would match `aa` instead of `aaaa` in `aaaab`
+- Predefined character sets:
+  - `\d` matches any numeric digit (equivalent to `[0-9]`)
+  - `\D` matches any character that is not a numeric digit (equivalent to `[^0-9]`)
+  - `\w` matches any alphanumeric character (equivalent to `[A-Za-z0-9_]`)
+  - `\W` matches any character that is not alphanumeric (equivalent to
+ `[^A-Za-z0-9_]`)
+  - `\s` matches any whitespace character, including spaces, tabs, and line breaks (equivalent to `[ \t\n\r\f\v]`)
+  - `\S` matches any non-whitespace character (equivalent to `[^ \t\n\r\f\v]`)
+  - `\b` matches a word boundary, i.e. the position between a word character (`\w`) and a non-word character (`\W`). Basically, it corresponds to the beginning/end of a string. For example, `\bword\b` matches `word` in `word`, `word.`, `word!` and `some word crazy`, but not in `sword`.
+  - `\B` matches any position that is not a word boundary. For example, `\Bword\B` matches `word` in `sworda`, but not `word.`, `word!` or `word`
+  - `\b` and `\B` do not necessarily need to be at the beginning and end of the regular expression. The expressions `\bword`, `word\b`, `\Bword` and `word\B` are also valid.
