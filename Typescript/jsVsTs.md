@@ -175,3 +175,23 @@ class Greeter {
   }
 }
 ```
+
+### Parameter Properties
+
+TypeScript offers special syntax for turning a constructor parameter into a class property with the same name and value. These are called parameter properties and are created by prefixing a constructor argument with one of the visibility modifiers `public`, `private`, `protected`, or `readonly`. The resulting field gets those modifier(s):
+
+```typescript
+class Params {
+  constructor(
+    public readonly x: number,
+    protected y: number,
+    private z: number
+  ) {
+    // No body necessary
+  }
+}
+const a = new Params(1, 2, 3);
+console.log(a.x);
+             
+console.log(a.z); // Property 'z' is private and only accessible within class 'Params'.
+```
